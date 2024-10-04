@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.vaultspay.vaultspay_modularize.fragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_auth_nav_graph"
+            app:destination="@id/auth_nav_graph" />
+        <action
+            android:id="@+id/action_splashFragment_to_dashboard_nav_graph"
+            app:destination="@id/dashboard_nav_graph" />
+    </fragment>
+
+    <include app:graph="@navigation/auth_nav_graph" />
+    <include app:graph="@navigation/dashboard_nav_graph" />
+
+</navigation>
